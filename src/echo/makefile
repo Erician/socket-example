@@ -25,7 +25,7 @@ start: $(PRODUCTS)
 	@netstat -lpn | grep "server" | grep "^tcp" 
 
 stop: $(PRODUCTS)
-	@for pid in `ps -ef | grep '../../obj/server' | grep -v 'grep' | tr -s " " | cut -d " " -f 2`; do echo "kill "$${pid}; kill $${pid}; done
+	@for pid in `ps -ef | grep '../../obj/echo/server' | grep -v 'grep' | tr -s " " | cut -d " " -f 2`; do echo "kill "$${pid}; kill $${pid}; done
 	
 #unittest,using googletest:https://github.com/google/googletest/blob/master/googletest/docs/Primer.md
 #this make no sense, and just test googletest
